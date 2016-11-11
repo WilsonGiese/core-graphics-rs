@@ -12,7 +12,7 @@ pub type CGKeyCode = libc::uint16_t;
 ///
 /// [Ref](http://opensource.apple.com/source/IOHIDFamily/IOHIDFamily-700/IOHIDSystem/IOKit/hidsystem/IOLLEvent.h)
 #[repr(C)]
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGEventFlags {
   // Device-independent modifier key bits.
   AlphaShift = 0x00010000,
@@ -36,7 +36,7 @@ pub enum CGEventFlags {
 ///
 /// [Ref](http://opensource.apple.com/source/IOHIDFamily/IOHIDFamily-700/IOHIDSystem/IOKit/hidsystem/IOLLEvent.h)
 #[repr(C)]
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGEventType {
     Null = 1 << 0,
 
@@ -70,7 +70,7 @@ pub enum CGEventType {
 
 // Constants that specify buttons on a one, two, or three-button mouse.
 #[repr(C)]
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGMouseButton {
     Left,
     Right,
@@ -79,7 +79,7 @@ pub enum CGMouseButton {
 
 /// Possible tapping points for events.
 #[repr(C)]
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CGEventTapLocation {
     HID,
     Session,
